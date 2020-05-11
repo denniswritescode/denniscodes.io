@@ -1,0 +1,24 @@
+.main-title {
+    position: relative;
+    font-size: 3.54rem;
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    margin: 0;
+    text-align: center;
+}
+
+.main-title.move-over {
+    transform: rotate(-90deg);
+    left: -104px;
+}
+  
+.main-title.get-out {
+    transform: rotate(-90deg);
+    left: calc(-100%);
+}
+
+.does-code {
+    text-decoration: underline;
+    cursor: pointer;
+}
