@@ -22,7 +22,7 @@ class InsertSort extends Component {
       num: cp(bars[1]),
       i: 1,
       k: 1,
-      speed: 200
+      speed: 100
     }; 
   }
 
