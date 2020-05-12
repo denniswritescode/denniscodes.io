@@ -1,11 +1,11 @@
 import React from 'react';
 import Experiments from '../Experiments/Experiments';
+import { Link, withRouter } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import './Home.css';
 
 
-function Home() {
-  const [showExp, setShowExp] = React.useState(false);
+function Home({ location }) {
 
   return ( 
     <div>
@@ -18,8 +18,10 @@ function Home() {
 
               Dennis&nbsp;
 
-              <span className="acc-text does-code" onClick={()=>{setShowExp(show=>!show)}}>
-                codes
+              <span className="acc-text does-code">
+
+                <Link to="/experiments">codes</Link>
+
               </span>&nbsp;
 
               things. 
@@ -30,7 +32,7 @@ function Home() {
 
       </div>
 
-      <CSSTransition in={showExp} timeout={750}>
+      <CSSTransition in={location.pathname.startsWith("/experiments")} timeout={750} appear>
 
         <Experiments />
 
@@ -40,4 +42,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default withRouter(Home);

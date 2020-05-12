@@ -1,0 +1,8 @@
+.bars {
+  width: 90%;
+  max-width: 800px;
+  height: 500px;
+  margin: 0 auto;
+  background: #f0f0f0;
+  position: relative;
+}

@@ -5,23 +5,27 @@
     top: 0;
     width: 100vw;
     height: 100vh;
-    background: #d5d6d5;
+    background: #e7e6e7;
+    border-left: 1px solid #e7e6e7;
 }
 
-.ex-bg-top {
+.ex-container {
     position: absolute;
     left: 100%;
     top: 0;
     width: 100vw;
     height: 100vh;
-    background: #e6e7e6;
-    transition-delay: 100ms;
+    background: #fafafa;
+    transition-delay: 0ms;
 }
 
-.enter.enter-active .ex-bg-top,
-.enter-done .ex-bg-top, 
 .enter.enter-active .ex-bg,
 .enter-done .ex-bg {
+    left: calc(50% - 1px);
+}
+
+.enter.enter-active .ex-container,
+.enter-done .ex-container {
     left: 50%;
 }
 
@@ -30,13 +34,13 @@
     left: 100%;
 }
 
-.experiments h2,
-.experiments p,
-.experiments ul {
+.experiments .experiment-list h2,
+.experiments .experiment-list p,
+.experiments .experiment-list ul {
     position: relative;
     text-align: left;
     max-width: 40vw;
-    left: 8rem;
+    left: 12rem;
 }
 
 .experiments h2 {
@@ -45,17 +49,17 @@
     font-weight: 900;
     margin-bottom: 1rem;
     color: #8a8a8a;
-    transition-delay: 200ms;
+    transition-delay: 50ms;
 }
 
 .experiments p {
     font-size: 1.4rem;
-    transition-delay: 200ms;
+    transition-delay: 100ms;
 }
 
 .experiments ul {
     font-size: 1.2rem;
-    transition-delay: 230ms;
+    transition-delay: 100ms;
 }
 
 .enter.enter-active.experiments h2,
@@ -66,4 +70,41 @@
 .enter-done.experiments ul
 {
     left: 4rem;
+}
+
+.experiments .full-enter .ex-bg {
+    left: calc(50% - 1px);
+}
+
+.experiments .full-enter .ex-container {
+    left: 50%;
+}
+
+.experiments .full-enter-done .ex-bg, 
+.experiments .full-enter.full-enter-active .ex-bg {
+    left: 69px;
+}
+
+.experiments .full-enter-done .ex-container, 
+.experiments .full-enter.full-enter-active .ex-container {
+    left: 70px;
+    width: calc(100vw - 70px);
+}
+
+.experiments .full-enter-done .close, 
+.experiments .full-enter-active .close, 
+.close {
+    position: absolute;
+    top: 3rem;
+    left: calc(100% - 5rem);
+}
+
+.close img {
+    height: 30px;
+    width: 30px;
+    opacity: 0.3;
+}
+
+.enter-done .close {
+    left: calc(50% - 5rem);
 }

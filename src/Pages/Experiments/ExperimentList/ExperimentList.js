@@ -1,5 +1,5 @@
 import React from 'react';
-import './ExperimentList.css';
+import { Link } from 'react-router-dom';
 
 function ExperimentList() {
   return (
@@ -11,7 +11,9 @@ function ExperimentList() {
 
       <ul className="t600">
 
-        <li>Insertion Sort</li>
+        <li>
+          <Link to="/experiments/insert-sort">Insertion Sort</Link>
+        </li>
         
         <li>Maximum Window Sum</li>
 

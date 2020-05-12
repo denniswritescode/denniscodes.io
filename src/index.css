@@ -127,3 +127,9 @@ a:focus {
     white-space: normal;
     font-size: 1rem;
 }
+
+button {
+    -webkit-box-shadow:none;
+    box-shadow: none;
+    outline: none!important;
+}

@@ -1,0 +1,11 @@
+
+.isort-move {
+  margin-bottom: 3rem;
+  background: crimson;
+  color: #eaeaea;
+  border-radius: 4px;
+  padding: 1rem;
+  font-weight: 700;
+  font-size:1.3rem;
+  cursor: pointer;
+}

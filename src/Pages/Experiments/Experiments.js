@@ -1,22 +1,56 @@
 import React from 'react';
 import './Experiments.css';
+import { Route, withRouter, Link } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 
+import '../../Shared/SingleExperiment/SingleExperiment.css';
 import ExperimentList from './ExperimentList/ExperimentList';
+import InsertSort from './ExperimentList/Sorting/InsertSort/InsertSort';
+import Close from '../../Shared/Assets/Close.svg';
 
-function Experiments() {
+function Experiments({ location }) {
   return (
+
     <div className="experiments">
 
-      <div className="ex-bg t200"></div>
+      <CSSTransition
+        in={location.pathname == "/experiments/insert-sort"}
+        timeout={400}
+        classNames={"full"}
+        appear
+      >
 
-      <div className="ex-bg-top t400">
+        <div>
 
-        <ExperimentList />
+          <div className="ex-bg t200"></div>
 
-      </div>
+          <div className="ex-container t400">
+
+            <Route exact path="/experiments" component={ExperimentList} />
+
+            <Route exact path="/experiments/insert-sort" component={InsertSort} />
+
+            <div className="close t600">
+
+              <Link 
+                to={location.pathname === "/experiments" ? "/" : "/experiments"}
+              >
+
+                <img src={Close} />
+
+              </Link>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </CSSTransition>
 
     </div>
+
   );
 }
 
-export default Experiments;
+export default withRouter(Experiments);

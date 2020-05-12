@@ -1,0 +1,54 @@
+.bar {
+  width: 9.1%;
+  min-height: 1rem;
+  background: #6495ed;
+  opacity: 0.8;
+  position: absolute;
+  bottom: 0;
+  transition-delay: 100ms;
+  transition-property: left;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.bar.p0 { left: 0%; }
+.bar.p1 { left: 10.1%; }
+.bar.p2 { left: 20.2%; }
+.bar.p3 { left: 30.3%; }
+.bar.p4 { left: 40.4%; }
+.bar.p5 { left: 50.5%; }
+.bar.p6 { left: 60.6%; }
+.bar.p7 { left: 70.7%; }
+.bar.p8 { left: 80.8%; }
+.bar.p9 { left: 90.9%; }
+
+/* .bar.p0 { transition-delay: 050ms; }
+.bar.p1 { transition-delay: 105ms; }
+.bar.p2 { transition-delay: 70ms; }
+.bar.p3 { transition-delay: 150ms; }
+.bar.p4 { transition-delay: 170ms; }
+.bar.p5 { transition-delay: 205ms; }
+.bar.p6 { transition-delay: 300ms; }
+.bar.p7 { transition-delay: 325ms; }
+.bar.p8 { transition-delay: 350ms; }
+.bar.p9 { transition-delay: 550ms; } */
+
+.bar.active {
+  background: crimson;
+}
+
+.bar h4,
+.bar h5,
+.bar h6 {
+  line-height: .8;
+  margin:8px 0;
+}
+
+.bar h4 {
+}
+.bar h5 {
+  font-size:.6em;
+}
+.bar h6 {
+  font-size:.6em;
+}
