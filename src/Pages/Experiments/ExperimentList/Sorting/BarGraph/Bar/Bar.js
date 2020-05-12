@@ -9,7 +9,7 @@ function Bar({ order, value, active, k }) {
 
   return (
   <div className={`t200 bar p${order} ${active ? 'active' : ''}`} style={barStyle}>
-    <h4>{value}</h4>
+    <h4>{value+1}</h4>
   </div>
   );
 }

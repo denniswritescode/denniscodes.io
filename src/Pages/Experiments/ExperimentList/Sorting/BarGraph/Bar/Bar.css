@@ -34,6 +34,8 @@
 .bar.p9 { transition-delay: 550ms; } */
 
 .bar.active {
+  animation-duration: 200ms;
+  animation-name: popandmove;
   background: crimson;
 }
 
@@ -43,13 +45,15 @@
   line-height: .8;
   margin:13px 0 0;
   color: white;
+  font-size:.6em;
 }
 
-.bar h4 {
-}
-.bar h5 {
-  font-size:.6em;
-}
-.bar h6 {
-  font-size:.6em;
+@keyframes popandmove {
+  from {
+    background: yellow;
+  }
+
+  to {
+    background: crimson;
+  }
 }

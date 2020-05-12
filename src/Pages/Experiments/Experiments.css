@@ -108,3 +108,40 @@
 .enter-done .close {
     left: calc(50% - 5rem);
 }
+
+h2.sorted {
+    margin-top: 1rem;
+}
+
+@media (max-width: 576px) {
+    .experiments.enter-done .ex-container, 
+    .experiments.enter-active .ex-container, 
+    .experiments .full-enter-done .ex-container, 
+    .experiments .full-enter.full-enter-active .ex-container {
+        left: 0px;
+        width: 100% !important;
+    }
+
+    .experiments .single-experiment h3 {
+        font-size: 2rem !important;
+    }
+
+    .experiments .experiment-list h2,
+    .experiments .experiment-list p, 
+    .experiments .experiment-list ul {
+        max-width: 75% !important;
+    }
+
+    .experiments .experiment-list p, 
+    .experiments .experiment-list ul {
+        font-size: 1.5rem;
+    }
+
+    .bars {
+        height: 30vh !important;
+    }
+
+    .enter-done .close {
+        left: calc(100% - 5rem);
+    }
+}

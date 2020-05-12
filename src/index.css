@@ -6,12 +6,13 @@ html,
 body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    overflow-x: hidden;
 }
 
 html {
     font-size: 12px;
     -webkit-font-smoothing: antialiased;
-    overflow: hidden;
 }
 
 body {

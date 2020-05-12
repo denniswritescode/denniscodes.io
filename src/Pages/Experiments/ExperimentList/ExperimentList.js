@@ -15,7 +15,7 @@ function ExperimentList() {
           <Link to="/experiments/insert-sort">Insertion Sort</Link>
         </li>
         
-        <li>Maximum Window Sum</li>
+        <li>Maximum Window Sum (WIP)</li>
 
       </ul>
 

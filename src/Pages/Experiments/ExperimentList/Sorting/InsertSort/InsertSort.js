@@ -3,17 +3,6 @@ import React, { Component } from 'react';
 import './InsertSort.css';
 import BarGraph from '../BarGraph/BarGraph';
 
-
-function cp(obj) {
-  return Object.assign({}, obj);
-}
-
-function o(num) {
-  return function(e) {
-    return e.order === num;
-  }
-}
-
 class InsertSort extends Component {
 
   constructor(props) {
@@ -23,6 +12,7 @@ class InsertSort extends Component {
     this.startSort = this.startSort.bind(this);
     this.mixBars = this.mixBars.bind(this);
     this.sorted = false;
+    this.sorting = false;
     this.interval = undefined;
 
     let bars = this.createMix();
@@ -31,7 +21,8 @@ class InsertSort extends Component {
       bars: bars,
       num: cp(bars[1]),
       i: 1,
-      k: 1
+      k: 1,
+      speed: 200
     }; 
   }
 
@@ -42,9 +33,12 @@ class InsertSort extends Component {
   }
 
   startSort() {
+    this.sortOne();
+    this.sorting = true;
+
     this.interval = setInterval(() => {
       this.sortOne();
-    }, 300);
+    }, this.state.speed);
   }
 
   sortOne() {
@@ -52,6 +46,7 @@ class InsertSort extends Component {
 
       if(state.i >= state.bars.length) {
         this.sorted = true;
+        this.sorting = false;
         clearInterval(this.interval);
         return state;
       }
@@ -88,16 +83,11 @@ class InsertSort extends Component {
   createMix() {
     const seed = '0123456789'; 
     let bars = seed
-                  .split('')
-                  .sort(() => Math.random() - 0.5)
-                  .map((b, i) => {
-                    return { order: i, key: i, value: Number(b), active: false }
-                  });
-/*     let bars = '321'
-                  .split('')
-                  .map((b, i) => {
-                    return { order: i, key: i, value: Number(b), active: false }
-                  }); */
+                .split('')
+                .sort(() => Math.random() - 0.5)
+                .map((b, i) => {
+                  return { order: i, key: i, value: Number(b), active: false }
+                });
     return bars;
   }
 
@@ -106,12 +96,7 @@ class InsertSort extends Component {
       let bars = this.createMix();
       this.sorted = false;
 
-      return {
-        bars: bars,
-        k: 1,
-        i: 1,
-        num: cp(bars[1])
-      };
+      return { bars: bars, k: 1, i: 1, num: cp(bars[1]) };
     });
   }
 
@@ -122,11 +107,28 @@ class InsertSort extends Component {
 
         <h3>Insert Sort Visualizer</h3>
 
-        <button className="isort-move" onClick={this.startSort}>Sort</button>
+        <div className="button-group">
 
-        <button className="isort-move" onClick={this.sortOne}>Increment</button>
+          <button className="isort-move" onClick={this.startSort}>Sort</button>
 
-        <button className="isort-move" onClick={this.mixBars}>Mix</button>
+          <button className="isort-move" onClick={this.sortOne}>Increment</button>
+
+          <button className="isort-move" onClick={this.mixBars}>Mix</button>
+
+        </div>
+
+        <div className="slider-group">
+
+          <label>Speed: {this.state.speed} milliseconds</label><br />
+          <input
+            type="range"
+            min="100" max="2000"
+            defaultValue={this.state.speed} 
+            onChange={(e) => this.setState({speed: e.target.value})}
+            step="100"
+          /> 
+
+        </div>
 
         <div className="sort-graph">
 
@@ -134,7 +136,7 @@ class InsertSort extends Component {
 
         </div>
 
-        <h2>{this.sorted ? "SORTED" : ""}</h2>
+        <h2 className="sorted">{this.sorted ? "SORTED" : ""}</h2>
 
       </div>
 
@@ -142,5 +144,14 @@ class InsertSort extends Component {
   }
 }
 
+function cp(obj) {
+  return Object.assign({}, obj);
+}
+
+function o(num) {
+  return function(e) {
+    return e.order === num;
+  }
+}
 
 export default InsertSort;

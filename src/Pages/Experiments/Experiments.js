@@ -14,7 +14,7 @@ function Experiments({ location }) {
     <div className="experiments">
 
       <CSSTransition
-        in={location.pathname == "/experiments/insert-sort"}
+        in={location.pathname === "/experiments/insert-sort"}
         timeout={400}
         classNames={"full"}
         appear
@@ -36,7 +36,7 @@ function Experiments({ location }) {
                 to={location.pathname === "/experiments" ? "/" : "/experiments"}
               >
 
-                <img src={Close} />
+                <img src={Close} alt="close panel" />
 
               </Link>
 
