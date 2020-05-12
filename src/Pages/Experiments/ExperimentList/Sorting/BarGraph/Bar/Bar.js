@@ -8,10 +8,8 @@ function Bar({ order, value, active, k }) {
   };
 
   return (
-  <div className={`t400 bar p${order} ${active ? 'active' : ''}`} style={barStyle}>
+  <div className={`t200 bar p${order} ${active ? 'active' : ''}`} style={barStyle}>
     <h4>{value}</h4>
-    <h5>{k === order ? "k": ""}{k-1 === order ? "k-1": ""}</h5>
-    <h6>{order}</h6>
   </div>
   );
 }

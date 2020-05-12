@@ -30,7 +30,7 @@ function Experiments({ location }) {
 
             <Route exact path="/experiments/insert-sort" component={InsertSort} />
 
-            <div className="close t600">
+            <div className="close t200">
 
               <Link 
                 to={location.pathname === "/experiments" ? "/" : "/experiments"}

@@ -44,7 +44,7 @@ class InsertSort extends Component {
   startSort() {
     this.interval = setInterval(() => {
       this.sortOne();
-    }, 500);
+    }, 300);
   }
 
   sortOne() {
@@ -53,7 +53,6 @@ class InsertSort extends Component {
       if(state.i >= state.bars.length) {
         this.sorted = true;
         clearInterval(this.interval);
-        alert('done!');
         return state;
       }
 
@@ -134,10 +133,8 @@ class InsertSort extends Component {
           <BarGraph bars={this.state.bars} active={this.state.num?.value} k={this.state.k} />
 
         </div>
-        <br />
-        i : {this.state.i}<br />
-        k : {this.state.k}<br />
-        num : {this.state.num?.value}
+
+        <h2>{this.sorted ? "SORTED" : ""}</h2>
 
       </div>
 
