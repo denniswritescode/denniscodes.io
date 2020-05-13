@@ -11,6 +11,8 @@ class MinWindowSubstring extends Component {
 
         <p>A visualization of the <a href="https://leetcode.com/problems/minimum-window-substring/" target="_blank">76th LeetCode Problem</a>.</p>
 
+        <p className="coming-soon">(coming soon)</p>
+
       </div>
     );
   }

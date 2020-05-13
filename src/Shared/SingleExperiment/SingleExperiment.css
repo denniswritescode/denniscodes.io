@@ -13,6 +13,13 @@
     text-align: center;
 }
 
+.experiments .single-experiment p.coming-soon {
+    color: #bababa;
+    letter-spacing: -0.05rem;
+    font-weight: 700;
+    font-style: italic;
+}
+
 @media (max-width: 576px) {
     .experiments .single-experiment h3 {
         font-size: 2rem !important;
