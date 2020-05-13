@@ -1,0 +1,11 @@
+.social-icons {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  text-align: left;
+}
+
+.social-icons ul,
+.social-icons ul li {
+  list-style: none;
+}

@@ -19,7 +19,7 @@ class InsertSort extends Component {
 
     this.state = {
       bars: bars,
-      num: cp(bars[1]),
+      num: clone(bars[1]),
       i: 1,
       k: 1,
       speed: 100
@@ -57,18 +57,18 @@ class InsertSort extends Component {
       let num = state.num;
 
       if(k > 0) {
-        if(bars.find(o(k-1)).value > num.value) {
-          this.swapProps(bars.find(o(k)), bars.find(o(k-1)), 'order');
+        if(bars.find(index(k-1)).value > num.value) {
+          this.swapProps(bars.find(index(k)), bars.find(index(k-1)), 'order');
           k--;
         }
       }
 
-      if(k <= 0 || bars.find(o(k-1)).value < num.value) {
-        let b = bars.find(o(k));
+      if(k <= 0 || bars.find(index(k-1)).value < num.value) {
+        let b = bars.find(index(k));
         b.value = num.value;
         i++;
         k = i;
-        num = bars.find(o(k));
+        num = bars.find(index(k));
       }
 
       return {
@@ -96,7 +96,7 @@ class InsertSort extends Component {
       let bars = this.createMix();
       this.sorted = false;
 
-      return { bars: bars, k: 1, i: 1, num: cp(bars[1]) };
+      return { bars: bars, k: 1, i: 1, num: clone(bars[1]) };
     });
   }
 
@@ -107,7 +107,7 @@ class InsertSort extends Component {
 
         <h3>Insert Sort Visualizer</h3>
 
-        <p>A visualizer of the <a href="https://www.wikiwand.com/en/Insertion_sort" target="_blank">insert sort</a> algorithm.</p>
+        <p>A visualizer of the <a href="https://www.wikiwand.com/en/Insertion_sort" target="_blank" rel="noopener noreferrer">insert sort</a> algorithm.</p>
 
         <div className="button-group">
 
@@ -146,11 +146,11 @@ class InsertSort extends Component {
   }
 }
 
-function cp(obj) {
+function clone(obj) {
   return Object.assign({}, obj);
 }
 
-function o(num) {
+function index(num) {
   return function(e) {
     return e.order === num;
   }
