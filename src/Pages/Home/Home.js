@@ -2,7 +2,9 @@ import React from 'react';
 import Experiments from '../Experiments/Experiments';
 import { Link, withRouter } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
+
 import './Home.css';
+import SocialIcons from '../../Shared/SocialIcons/SocialIcons';
 
 
 function Home({ location }) {
@@ -38,6 +40,7 @@ function Home({ location }) {
 
       </CSSTransition>
 
+      {location.pathname === "/" && <SocialIcons />}
 
     </div>
   );

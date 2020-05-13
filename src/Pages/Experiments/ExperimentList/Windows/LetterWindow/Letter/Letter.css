@@ -1,0 +1,30 @@
+
+:root {
+  --letter-dim: 5rem;
+}
+
+.letter-wrap {
+  width: var(--letter-dim);
+  background: grey;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.letter-wrap.active {
+  background: cornflowerblue;
+}
+
+.letter-wrap:last-child {
+  margin-right: 0;
+}
+
+.letter-wrap.middle-wrap:before {
+  height: var(--letter-dim);
+}
+
+.letter-wrap span {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
