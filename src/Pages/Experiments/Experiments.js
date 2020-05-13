@@ -7,6 +7,7 @@ import '../../Shared/SingleExperiment/SingleExperiment.css';
 import ExperimentList from './ExperimentList/ExperimentList';
 import InsertSort from './ExperimentList/Sorting/InsertSort/InsertSort';
 import Close from '../../Shared/Assets/Close.svg';
+import MinWindowSubstring from './ExperimentList/Windows/MinWindowSubstring/MinWindowSubstring';
 
 function Experiments({ location }) {
   return (
@@ -14,7 +15,7 @@ function Experiments({ location }) {
     <div className="experiments">
 
       <CSSTransition
-        in={location.pathname === "/experiments/insert-sort"}
+        in={/\/experiments\/[a-zA-Z]{1,}/.test(location.pathname)}
         timeout={400}
         classNames={"full"}
         appear
@@ -29,6 +30,8 @@ function Experiments({ location }) {
             <Route exact path="/experiments" component={ExperimentList} />
 
             <Route exact path="/experiments/insert-sort" component={InsertSort} />
+
+            <Route exact path="/experiments/min-window-substring" component={MinWindowSubstring} />
 
             <div className="close t200">
 

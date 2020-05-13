@@ -122,10 +122,6 @@ h2.sorted {
         width: 100% !important;
     }
 
-    .experiments .single-experiment h3 {
-        font-size: 2rem !important;
-    }
-
     .experiments .experiment-list h2,
     .experiments .experiment-list p, 
     .experiments .experiment-list ul {

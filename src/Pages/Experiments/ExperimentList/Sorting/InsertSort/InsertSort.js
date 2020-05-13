@@ -103,9 +103,11 @@ class InsertSort extends Component {
   render() {
     return (
 
-      <div className="single-experiment">
+      <div className="single-experiment insert-sort">
 
         <h3>Insert Sort Visualizer</h3>
+
+        <p>A visualizer of the <a href="https://www.wikiwand.com/en/Insertion_sort" target="_blank">insert sort</a> algorithm.</p>
 
         <div className="button-group">
 
@@ -132,7 +134,7 @@ class InsertSort extends Component {
 
         <div className="sort-graph">
 
-          <BarGraph bars={this.state.bars} active={this.state.num?.value} k={this.state.k} />
+          <BarGraph bars={this.state.bars} active={this.state.num?.value} />
 
         </div>
 

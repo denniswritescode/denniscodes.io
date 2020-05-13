@@ -6,8 +6,16 @@
 .experiments .single-experiment h3 {
     font-size: 2.6rem;
     color: #1a1a1a;
+    margin-bottom: 1rem;
 }
 
 .experiments .single-experiment p {
-    text-align: justify;
+    text-align: center;
+}
+
+@media (max-width: 576px) {
+    .experiments .single-experiment h3 {
+        font-size: 2rem !important;
+    }
+    
 }

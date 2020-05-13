@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Bar.css';
 
-function Bar({ order, value, active, k }) {
+function Bar({ order, value, active }) {
   const barStyle = {
     height: (9*(Number(value)+1)) + "%"
   };

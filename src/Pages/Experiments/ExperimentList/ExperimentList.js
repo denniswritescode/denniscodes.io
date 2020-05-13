@@ -12,10 +12,16 @@ function ExperimentList() {
       <ul className="t600">
 
         <li>
+          
           <Link to="/experiments/insert-sort">Insertion Sort</Link>
+
         </li>
-        
-        <li>Maximum Window Sum (WIP)</li>
+
+        <li>
+
+          <Link to="/experiments/min-window-substring">Minimum Window Substring</Link>
+
+        </li>
 
       </ul>
 
