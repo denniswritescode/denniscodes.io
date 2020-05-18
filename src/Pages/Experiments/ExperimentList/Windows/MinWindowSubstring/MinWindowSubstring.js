@@ -3,29 +3,50 @@ import LetterWindow from '../LetterWindow/LetterWindow';
 
 import './MinWindowSubstring.css';
 
+const CHARS = 'ZCODEBAEDC';
+const TARGET = 'CDE';
+
 class MinWindowSubstring extends Component {
 
   constructor(props) {
     super(props);
-    let chars = 'CODEBAEDC';
-    let target = 'CDE';
-    let [table, missing] = this.makeTable(target);
+    let [table, missing] = this.makeTable(TARGET);
 
     this.debug = true;
     this.ans = [];
 
     this.increment = this.increment.bind(this);
     this.algorithm = this.algorithm.bind(this);
+    this.reset = this.reset.bind(this);
 
     this.state = this.algorithm({
       iteration: 0,
-      chars: chars,
+      chars: CHARS,
       left: 0,
       right: 0,
-      target: target,
+      target: TARGET,
       table: table,
       missing: missing,
       done: false
+    });
+  }
+
+  reset() {
+    this.ans = [];
+
+    this.setState((state) => {
+      let [table, missing] = this.makeTable(TARGET);
+      
+      return this.algorithm({
+        iteration: 0,
+        chars: CHARS,
+        left: 0,
+        right: 0,
+        target: TARGET,
+        table: table,
+        missing: missing,
+        done: false
+      });
     });
   }
 
@@ -38,14 +59,9 @@ class MinWindowSubstring extends Component {
       return state;
     }
     
+    // If no missing characters...
     if(missing === 0) {
-
-      this.ans.push({
-        window: chars.substring(left, right+1),
-        range: [left, right]
-      });
-      
-      // CONTRACT WINDOW
+      // contract window...     (on the first iteration we only perform checks, no window adjustments)
       if(iteration > 0) left++;
       
       let l = chars[left-1];
@@ -54,13 +70,21 @@ class MinWindowSubstring extends Component {
       }
 
     } else {
-      // EXPAND WINDOW
+      // expand window...     (on the first iteration we only perform checks, no window adjustments)
       if(iteration > 0) right++;
 
       let r = chars[right];
       if(r in table) {
         if(table[r]-- > 0) missing--;
       }
+    }
+
+    // Check for answers
+    if(missing === 0) {
+      this.ans.push({
+        window: chars.substring(left, right+1),
+        range: [left, right]
+      });
     }
 
     iteration++;
@@ -103,35 +127,19 @@ class MinWindowSubstring extends Component {
             onClick={this.increment}
             disabled={this.state.right >= this.state.chars.length}
           >increment</button>
+
+          <button
+            onClick={this.reset}
+          >reset</button>
           
         </div>
 
-        <div className="meta">
-
-          <dt>Not Found:</dt><dd>{this.state.missing}</dd>
-          <dt>Left:</dt><dd>{this.state.left}</dd>
-          <dt>Right:</dt><dd>{this.state.right}</dd>
-          {Object.entries(this.state.table).map((e, i) => {
-            return (
-              <div key={i}>
-                <dt>{e[0]}</dt><dd>{e[1]}</dd>
-              </div>
-            )
-          })}
-          <div>
-            <dt>Ans</dt><dd>{JSON.stringify(this.ans)}</dd>
-          </div>
-
-        </div>
-
-        {this.debug ?
-          <LetterWindow
-            chars={this.state.chars}
-            left={this.state.left}
-            right={this.state.right}
-            desirable={this.state.missing === 0}
-          /> : <p className="coming-soon">Soon, still working on it ;)</p>
-        }
+        <LetterWindow
+          chars={this.state.chars}
+          left={this.state.left}
+          right={this.state.right}
+          desirable={this.state.missing === 0}
+        />
 
       </div>
     );
