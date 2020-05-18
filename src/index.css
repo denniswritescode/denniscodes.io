@@ -20,7 +20,7 @@ body {
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: 0.025em;
-    line-height: 1.9428;
+    line-height: 1.5;
     color: #2a2a2a;
     background: #f7f6f7;
     -webkit-overflow-scrolling: touch;
@@ -32,11 +32,12 @@ h1 {
     line-height: 1.2;
     font-weight: 600;
     letter-spacing: -0.025em;
-    margin: 0.5em 0;
+    margin: 0 0 1rem;
 }
 
 h2, h3, h4, h5, h6 {
     letter-spacing: -0.025em;
+    margin: 0 0 1rem;
 }
 
 h1 a,
@@ -133,4 +134,25 @@ button {
     -webkit-box-shadow:none;
     box-shadow: none;
     outline: none!important;
+    border: none;
+}
+
+button {
+  margin-bottom: 1rem;
+  background: var(--accent-color);
+  color: #eaeaea;
+  border-radius: 4px;
+  padding: 1rem;
+  font-weight: 700;
+  font-size:1.3rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+button:last-child {
+    margin-right: 0;
+}
+
+button:disabled {
+    background-color: darkgray;
 }

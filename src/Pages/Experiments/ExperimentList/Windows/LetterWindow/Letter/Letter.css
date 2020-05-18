@@ -3,6 +3,35 @@
   --letter-dim: 5rem;
 }
 
+.letter-col {
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+.letter-col .clear-tri, 
+.letter-col .up-tri, 
+.letter-col .down-tri {
+  height: 0;
+  width: 0;
+  margin: 0 auto;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+.letter-col .down-tri {
+  margin-bottom: 1rem;
+  border-top: 10px solid red;
+}
+
+.letter-col .up-tri {
+  margin-top: 1rem;
+  border-bottom: 10px solid blue;
+}
+.letter-col .clear-tri {
+  height: 1rem;
+  border-bottom: 10px solid transparent;
+}
+
 .letter-wrap {
   width: var(--letter-dim);
   background: grey;
@@ -12,8 +41,13 @@
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
 }
+
 .letter-wrap.active {
   background: cornflowerblue;
+}
+
+.letter-wrap.active.desirable {
+  background: green;
 }
 
 .letter-wrap:last-child {
@@ -27,4 +61,8 @@
 .letter-wrap span {
   font-size: 2.5rem;
   font-weight: 900;
+}
+
+.letter-index {
+  margin-top: 1.5rem;
 }

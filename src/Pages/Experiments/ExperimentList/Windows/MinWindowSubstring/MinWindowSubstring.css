@@ -1,3 +1,25 @@
 .min-window-substring p {
   margin-bottom: 3rem;
 }
+
+.min-window-substring .meta {
+  width: 600px;
+  margin: 0 auto;
+  height: 100px;
+}
+
+.min-window-substring .meta dt,
+.min-window-substring .meta dd {
+  width: 50%;
+  text-align: left;
+  float: left;
+  margin: 0;
+}
+
+.min-window-substring .meta dt {
+  width: 25%;
+}
+
+.min-window-substring .meta dd {
+  width: 75%;
+}

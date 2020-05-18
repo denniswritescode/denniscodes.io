@@ -1,6 +1,6 @@
 .experiments .single-experiment {
     max-width: 65vw;
-    margin: 7rem auto 0;
+    margin: 4.5rem auto 0;
 }
 
 .experiments .single-experiment h3 {
@@ -11,6 +11,8 @@
 
 .experiments .single-experiment p {
     text-align: center;
+    margin: .7rem 0 1.5rem;
+    color: #8a8a8a;
 }
 
 .experiments .single-experiment p.coming-soon {

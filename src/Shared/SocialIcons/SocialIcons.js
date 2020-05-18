@@ -7,7 +7,7 @@ function SocialIcons() {
       <div className="social-icons">
         <ul>
           <li>
-            <a href="https://twitter.com/dennisporter" target="_blank" rel="noreferrer noopener">
+            <a href="https://twitter.com/dennisporterjr" target="_blank" rel="noreferrer noopener">
               Twitter
             </a>
           </li>
