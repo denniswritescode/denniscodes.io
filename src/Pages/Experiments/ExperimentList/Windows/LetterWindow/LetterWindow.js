@@ -40,7 +40,7 @@ class LetterWindow extends Component {
                 index={i}
                 value={c}
                 isLeft={i === this.state.left}
-                isRight={i == this.state.right}
+                isRight={i === this.state.right}
                 active={this.isActive(i)}
                 desirable={this.state.desirable}
               />
